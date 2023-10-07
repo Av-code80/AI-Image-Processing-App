@@ -1,4 +1,4 @@
-# Artificial Intelligence Frontend project based in Next 13 | Typescript
+# An Open Source Artificial Intelligence Frontend project based in Next 13 | Typescript
 
 ## Dev
 
@@ -46,4 +46,5 @@ More complex components that can be build with multiples atoms.
 #### /components/organism
 
 Complex logic components with business logic.
+
 # InitDrop-AI-Project
