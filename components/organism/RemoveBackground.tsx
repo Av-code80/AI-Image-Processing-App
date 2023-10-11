@@ -8,7 +8,6 @@ import removeBackgroundApi from '@/adapters/remove-bckground-api'
 import Button from '../atom/Button'
 
 export const ALLOWED_FILES = ['image/png', 'image/jpeg', 'image/webp']
-
 export default function RemoveBackground() {
   const [file, setFile] = useState<File | null>(null)
   const [result, setResult] = useState<File | null>(null)

@@ -12,7 +12,6 @@ enum Tab {
   SuperResolution = 'Super Resolution',
 }
 const TABS = Object.values(Tab)
-
 export default function Home() {
   const [tab, setTab] = useState(Tab.RemoveBackground)
   const onTabUpdate = (item: string) => setTab(item as Tab)
