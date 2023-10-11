@@ -9,7 +9,6 @@ import replaceBackgroundApi from '@/adapters/replace-background-api'
 import { TextInput } from '../atom/TextInput'
 
 export const ALLOWED_FILES = ['image/png', 'image/jpeg', 'image/webp']
-
 export default function ReplaceBackground() {
   const [file, setFile] = useState<File | null>(null)
   const [prompt, setPrompt] = useState('')

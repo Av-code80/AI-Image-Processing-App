@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-
 export default function useFileUrl(file: File | null) {
   const [src, setSrc] = useState<string>()
 
