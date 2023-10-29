@@ -33,7 +33,7 @@ export default async function removeBackgroundApi(
 
   if (result.ok) return await result.blob()
 
-  throw new NetworkError(
+  throw new NetworkError( // to be display in browser
     `[REMOVE_BG_API] Failed to fetch image`,
     result.statusText,
     result.status,
