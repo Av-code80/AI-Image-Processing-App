@@ -1,12 +1,12 @@
 import { useState } from 'react'
 
-interface sidebarProps {
+interface SidebarProps {
   items: string[]
   selectedTab: string
   onTabClick: (item: string) => void
 }
 
-const Sidebar = ({ items, selectedTab, onTabClick }: sidebarProps) => {
+const Sidebar = ({ items, selectedTab, onTabClick }: SidebarProps) => {
   const [toggle, setToggle] = useState(true)
   return (
     <>
