@@ -4,7 +4,7 @@ import Sidebar from '@/components/molecule/Sidebar'
 import RemoveBackground from '@/components/organism/RemoveBackground'
 import ReplaceBackground from '@/components/organism/ReplaceBackground'
 import Upscale from '@/components/organism/Upscale'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 enum Tab {
   RemoveBackground = 'Remove Background',
@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <>
-      <header>
+      <header> 
         <H1 className="sm:ml-64 mt-4 text-purple-900 ">{tab}</H1>
       </header>
       <main className="flex h-[calc(100vh-40px)] overflow-hidden flex-col items-center justify-between p-4">
@@ -34,5 +34,5 @@ export default function Home() {
         </section>
       </main>
     </>
-  )
+  ) 
 }

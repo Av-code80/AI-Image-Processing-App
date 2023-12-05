@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { SetStateAction, useState } from 'react'
 
 import Input from '@/components/molecule/Input'
 import Output from '@/components/molecule/Output'
@@ -51,7 +51,7 @@ export default function ReplaceBackground() {
     )
   }
 
-  const handlePrompt = (e: any): void => {
+  const handlePrompt = (e: { target: { value: SetStateAction<string> } }): void => {
     setPrompt(e.target.value)
   }
 

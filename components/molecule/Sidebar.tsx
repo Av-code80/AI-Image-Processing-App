@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 
 interface SidebarProps {
   items: string[]
@@ -8,6 +8,31 @@ interface SidebarProps {
 
 const Sidebar = ({ items, selectedTab, onTabClick }: SidebarProps) => {
   const [toggle, setToggle] = useState(true)
+
+  const onMapItems = useMemo(() => {
+    return items.map((item) => (
+      <li
+        key={item}
+        onClick={() => {
+          onTabClick(item)
+          setToggle(true)
+        }}
+      >
+        <a
+          href="#"
+          className={`flex items-center p-2 text-gray-900 rounded-lg hover:text-purple-400  
+                ${
+                  selectedTab === item
+                    ? 'bg-purple-900 text-white hover:text-white'
+                    : ''
+                }`}
+        >
+          <span className="ml-3">{item}</span>
+        </a>
+      </li>
+    ))
+  }, [items, selectedTab, onTabClick])
+
   return (
     <>
       <button
@@ -35,35 +60,12 @@ const Sidebar = ({ items, selectedTab, onTabClick }: SidebarProps) => {
         aria-label="Sidebar"
       >
         <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-          <ul className="space-y-2 font-medium">
-            {items.map((item) => (
-              <li
-                key={item}
-                onClick={() => {
-                  onTabClick(item)
-                  setToggle(true)
-                }}
-              >
-                <a
-                  href="#"
-                  className={`flex items-center p-2 text-gray-900 rounded-lg hover:text-purple-400  
-                ${
-                  selectedTab === item
-                    ? 'bg-purple-900 text-white hover:text-white'
-                    : ''
-                }`}
-                >
-                  <span className="ml-3">{item}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ul className="space-y-2 font-medium">{onMapItems}</ul>
         </div>
       </aside>
 
       <div
         onClick={() => setToggle(true)}
-        drawer-backdrop=""
         className={`bg-gray-900 bg-opacity-50 inset-0 fixed top-0 left-0 z-30 h-screen transition-transform duration-50 ${
           toggle && '-translate-x-full'
         }`}
