@@ -11,10 +11,9 @@ export default function downloadImage(uri: string, name: string) {
       view: window,
     }),
   )
-
+  // For Firefox it is necessary to delay revoking the ObjectURL
+  // window.URL.revokeObjectURL(base64)
   setTimeout(() => {
-    // For Firefox it is necessary to delay revoking the ObjectURL
-    // window.URL.revokeObjectURL(base64)
     link.remove()
   }, 100)
 }
