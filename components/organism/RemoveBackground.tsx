@@ -7,6 +7,10 @@ import useConcurrencyController from '@/components/atom/useConcurrencyController
 import removeBackgroundApi from '@/adapters/remove-bckground-api'
 import Button from '../atom/Button'
 
+/**
+ * Custom hook to manage & control concurrent requests
+ */
+
 export const ALLOWED_FILES = ['image/png', 'image/jpeg', 'image/webp']
 export default function RemoveBackground() {
   const [file, setFile] = useState<File | null>(null)
